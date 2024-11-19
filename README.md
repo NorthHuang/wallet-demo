@@ -5,13 +5,17 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version >=3.0
 
 * System dependencies
 
 * Configuration
+copy .env.development to .env
 
 * Database creation
+rails db:drop 
+rails db:create
+rails db:migrate
 
 * Database initialization
 
