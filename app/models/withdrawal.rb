@@ -1,5 +1,6 @@
 class Withdrawal < ApplicationRecord
-  has_one :event, as: :eventable
+  has_many :events, as: :eventable
+  belongs_to :user
 
   extend Enumerize
 

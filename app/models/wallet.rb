@@ -4,7 +4,7 @@ class Wallet < ApplicationRecord
   def as_api_json
     {
       id: id,
-      balance: balance,
+      balance: balance.to_f,
       created_at: created_at.strftime('%F %T'),
       updated_at: updated_at.strftime('%F %T')
     }

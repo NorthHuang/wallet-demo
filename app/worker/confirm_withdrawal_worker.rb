@@ -25,7 +25,7 @@ class ConfirmWithdrawalWorker
           user_id: withdrawal.user_id,
           eventable: withdrawal,
           event_type: 'withdrawal',
-          related_event_id: withdrawal.event.id
+          related_event_id: withdrawal.events.order(created_at: :desc).first.id
         )
       end
       return
@@ -40,7 +40,7 @@ class ConfirmWithdrawalWorker
         user_id: withdrawal.user_id,
         eventable: withdrawal,
         event_type: 'withdrawal',
-        related_event_id: withdrawal.event.id
+        related_event_id: withdrawal.events.order(created_at: :desc).first.id
       )
     end
   end

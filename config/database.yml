@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: wallet_test_development
+  database: wallet_demo_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: wallet_test_test
+  database: wallet_demo_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: wallet_test_production
-  username: wallet_test
-  password: <%= ENV["WALLET_TEST_DATABASE_PASSWORD"] %>
+  database: wallet_demo_production
+  username: wallet_demo
+  password: <%= ENV["WALLET_DEMO_DATABASE_PASSWORD"] %>

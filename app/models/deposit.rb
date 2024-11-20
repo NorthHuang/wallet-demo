@@ -1,5 +1,6 @@
 class Deposit < ApplicationRecord
-  has_one :event, as: :eventable
+  has_many :events, as: :eventable
+  belongs_to :user
   extend Enumerize
   enumerize :platform, in: [:visa, :mastercard, :cold_wallet, :hot_wallet]
 
